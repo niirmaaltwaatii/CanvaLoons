@@ -10,6 +10,9 @@ var h = window.innerHeight;
 cvs.width = w;
 cvs.height = h;
 
+// colours
+var clrs =  ["#234","lime","gold","red","blue","teal"];
+
 // canvastyles
 ctx.strokeStyle = "silver";
 ctx.fillStyle = "#234";
@@ -29,6 +32,7 @@ function Circle(x,y,r,dx,dy){
     // draw ballons
     this.draw = function(){
         ctx.beginPath();
+        ctx.fillStyle = clrs[Math.floor(Math.random() * clrs.length)];
         ctx.arc(this.x,this.y,this.r,0,Math.PI *2,false);
         ctx.moveTo(this.x,this.y);
         ctx.lineTo(this.x,this.y+75)
